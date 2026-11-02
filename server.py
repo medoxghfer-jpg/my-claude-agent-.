@@ -13,7 +13,7 @@ user_prompt = st.text_area("اكتب رسالتك للـ Agent هنا:")
 
 if st.button("إرسال"):
     if user_prompt:
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-1.5-pro")
         response = model.generate_content(user_prompt)
         st.write(response.text)
     else:
