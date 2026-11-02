@@ -7,14 +7,14 @@ st.title("My AI Agent - Gemini")
 if "GEMINI_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 else:
-    st.error("مفتاح الـ API غير موجود في الإعدادات!")
+    st.error("غير موجود في الإعدادات! API مفتاح الـ")
 
-user_prompt = st.text_area("اكتب رسالتك للـ Agent هنا:")
+user_prompt = st.text_area("هنا Agent اكتب رسالتك للـ:")
 
 if st.button("إرسال"):
     if user_prompt:
-       model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(user_prompt)
         st.write(response.text)
     else:
-        st.warning("الرجاء كتابة نص أولاً.")
+        st.warning(".الرجاء كتابة نص أولاً")
